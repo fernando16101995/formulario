@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción - Gimnasio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4F8C6F; 
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Evitar desplazamiento no deseado */
+        }
+
+        .form-container {
+            background-color: #BFBFBF; /* Fondo blanco para el formulario */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra para efecto flotante */
+            width: 90%; /* Ajustable a pantallas pequeñas */
+            max-width: 400px; /* Máximo ancho */
+            max-height: 90vh; /* Limitar la altura al 90% de la ventana */
+            overflow-y: auto; /* Scroll vertical si el contenido es mayor */
+            color: black; /* Cambiar el texto del formulario a negro */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #404040; /* Color del texto del título */
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="number"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #404040; /* Borde azul del campo de texto */
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease; /* Transición para el hover */
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="date"]:focus, select:focus {
+            box-shadow: 0 0 10px rgba(0, 122, 204, 0.5); /* Efecto de sombra al seleccionar */
+            border-color: #005f99; /* Cambiar borde al hacer focus */
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #48735F;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005f99;
+        }
+
+        /* Hacer que el contenedor sea responsive */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 100%; /* Se ajusta a pantallas más pequeñas */
+                padding: 20px; /* Menor espacio en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Inscripción a SkullGym</h1>
+        <form>
+            <!-- Datos personales -->
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+            <label>Género:</label>
+            <input type="radio" id="masculino" name="genero" value="Masculino" required> Masculino
+            <input type="radio" id="femenino" name="genero" value="Femenino"> Femenino
+            <input type="radio" id="otro" name="genero" value="Otro"> Otro
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Membresía -->
+            <label for="membresia">Tipo de membresía:</label>
+            <select id="membresia" name="membresia" required>
+                <option value="basica">Básica</option>
+                <option value="premium">Premium</option>
+                <option value="vip">VIP</option>
+            </select>
+
+            <label for="pago">Método de pago preferido:</label>
+            <select id="pago" name="pago" required>
+                <option value="tarjeta">Tarjeta de crédito/débito</option>
+                <option value="transferencia">Transferencia bancaria</option>
+                <option value="efectivo">Efectivo</option>
+            </select>
+
+            <label for="inicio">Fecha de inicio:</label>
+            <input type="date" id="inicio" name="inicio" required>
+
+            <!-- Salud -->
+            <label for="peso">Peso actual (kg):</label>
+            <input type="number" id="peso" name="peso" required>
+
+            <label for="altura">Altura (cm):</label>
+            <input type="number" id="altura" name="altura" required>
+
+            <label>¿Tienes alguna condición médica?</label>
+            <input type="radio" id="condicion_si" name="condicion" value="Sí"> Sí
+            <input type="radio" id="condicion_no" name="condicion" value="No" checked> No
+
+            <!-- Objetivos -->
+            <label for="objetivo">Objetivo principal:</label>
+            <select id="objetivo" name="objetivo" required>
+                <option value="perder_peso">Perder peso</option>
+                <option value="ganar_masa">Ganar masa muscular</option>
+                <option value="mantenerme">Mantenerme en forma</option>
+                <option value="competencia">Preparación para competencia</option>
+            </select>
+
+            <!-- Consentimiento -->
+            <label>Autorizo el uso de mis datos:</label>
+            <input type="checkbox" id="autorizo" name="autorizo" required> Sí
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+</body>
+</html>
